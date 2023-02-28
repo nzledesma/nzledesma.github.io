@@ -1,0 +1,568 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+} 
+
+/****** Variables ******/
+:root{
+    --first-color: rgb(194, 144, 8);
+    --second-color:rgb(185, 143, 182);
+    --third-color:rgb(255, 254, 254); 
+    --first-font: 'Francois One', sans-serif;
+}
+
+/**** Reset****/
+html{
+    font-size: 16px;
+}
+body{
+    margin: 0;
+    font-family: var(--first-font); 
+    overflow-x: hidden;
+    background: #00bbff;
+    background: linear-gradient(140deg,#00bbff 0%, #ff9000 80%);
+    background: -webkit-linear-gradient(140deg,#00bbff 0%, #ff9000 80%);
+    background: -moz-linear-gradient(140deg,#00bbff 0%, #ff9000 80%);
+    
+}
+a{
+    text-decoration: none;
+}
+li{
+    list-style: none;
+}
+
+/* HOME */
+.home{
+    background-image: url(/wallpaper1.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.home img{
+    height: 400px;
+    width: 400px;
+    border-radius: 50%;
+    margin-top: 8%;
+    margin-left: 10%;
+    border: 6px solid var(--first-color);
+}
+.home img:hover{
+    transform:translateX(6%);
+    transition: all 400ms ease;
+
+}
+.home .nombre{
+    font-size: 1.5rem;
+    margin-top: 20%;
+    margin-right: 20%;
+    font-family:var(--first-font);
+    text-shadow: 4px 4px 2px rgba(16,16,14,0.5);
+}
+.home .nombre:hover{
+    color: var(--first-color);
+    transition: all 400ms ease ;
+    transform: translateY(6%);
+}
+
+/* NAV */
+.nav-container{
+    display: grid;
+    grid-template-columns: 5fr 5fr ;
+    align-items: center;
+    padding: 15px;
+    background-color: transparent;
+    position: fixed;
+    width: 100%;
+    z-index: 99995;
+}
+.nav-container > .navegacion> .menu{
+    display: flex
+}
+.nav-container > .navegacion> .menu> .menu-item>a{
+    margin-left: 10px;
+    font-size: 1.1rem;
+    margin-right: 40px;
+    font-weight:normal;
+    color:black;
+    text-shadow: 4px 4px 2px rgba(16,16,14,0.5);
+
+}
+.nav-container > .navegacion> .menu> .menu-item>a:hover{
+    color: var(--first-color);
+    transition: all 0,3 ease-out ;
+}
+.nav-active{
+    background-color: rgb(126, 167, 93);
+    color: var(--third-color);
+    transition: all 0.3s ease-out;
+}
+
+/*** SECCIONES ***/
+
+/* cards */
+
+
+
+
+.card {
+    position: relative;
+    width: 500px;
+    height: 550px;
+    margin: 20px;
+}
+
+.card .face {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .5s;
+}
+
+.card .front {
+    transform: perspective(600px) rotateY(0deg);
+    box-shadow: 0 5px 10px #000;
+}
+
+.card .front img {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card .front h3 {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 45px;
+    line-height: 45px;
+    color: #fff;
+    background: rgba(0,0,0,.4);
+    text-align: center;
+    font-size: 2rem;
+}
+
+.card .back {
+    transform: perspective(600px) rotateY(180deg);
+    background: var(--first-color);
+    padding: 15px;
+    color:var(--second-color);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    box-shadow: 0 5px 10px #000;
+}
+
+.card .back .link {
+    border-top: solid 1px #f3f3f3;
+    height: 50px;
+    line-height: 50px;
+}
+
+.card .back .link a {
+    color: black;
+
+}
+
+.card .back h3 {
+    color: #000;
+    font-size: 2rem;
+    margin-top: 20px;
+    letter-spacing: 2px;
+}
+
+.card .back p {
+    color: #000;
+    letter-spacing: .5px;
+    font-size: 1.1rem;
+} 
+.card .back h2{
+    color: #000;
+    letter-spacing: .5px;
+    font-size: 1.1rem;
+}
+.card .back li{
+    color: #000;
+    letter-spacing: .5px;
+    font-size: 1.1rem;
+}
+
+.card:hover .front {
+    transform: perspective(600px) rotateY(180deg);
+}
+
+.card:hover .back {
+    transform: perspective(600px) rotateY(360deg);
+}
+.multiple{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-content: center;
+}
+
+.datos{
+    background-image: url(/wallpaper2.jpg);
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+    padding: 1.5%;  
+}
+.datos .card{
+    margin-left: 30%;
+}
+.experiencia{
+    background: linear-gradient(140deg,#00bbff 0%, #ff9000 80%);
+    background: -webkit-linear-gradient(140deg,#00bbff 0%, #ff9000 80%);
+    background: -moz-linear-gradient(140deg,#00bbff 0%, #ff9000 80%);
+    border: 5px solid var(--third-color);
+    border-radius: 15px;
+    padding: 10%;
+    margin: 5%;
+        
+}
+.experiencia:hover{
+    background-image: url(/vista-superior-varios-equipos-medicos.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    opacity: 80%;
+    color:black;
+    text-shadow: 4px 4px 2px rgba(16,16,14,0.5);
+
+}
+.experiencia h2{
+    line-height: 4rem;
+    font-size: 2.5rem;
+    text-align: center;
+    text-decoration: dotted;
+}
+
+.experiencia li{
+    line-height: 3rem;
+    list-style: square;
+    font-size: 1.3rem;
+}
+
+/* Formulario de contacto */
+
+
+.section .contact{
+    background-color: var(--third-color);
+    opacity: 90%;
+    padding: 10%;
+    margin: 5%;
+    border-radius: 1.3rem;
+}
+
+.form {
+    max-inline-size: 550px;
+    margin: auto;
+  }
+  .form .tag {
+    text-align: center;
+    padding: 5%;
+  }
+  
+  .form label {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: .5em;
+    padding-inline-start: .5em;
+  }
+  
+  .form label span {
+    color: #DA1414;
+  }
+  
+  .form input, .form textarea {
+    box-sizing: border-box;
+    width: 100%;
+    font-size: 1rem;
+    padding: .8em;
+    border-radius: .5em;
+    border: 1px solid #858C94;
+  }
+  .form textarea {
+    margin-block-end: 2em;
+    font-family: inherit;
+  }
+  
+  input::-webkit-input-placeholder {
+    color: #0F0A0A88;
+  }
+  
+  .contact {
+    margin-block-end: 5em;
+  }
+  .form button {
+    font-family: var(--first-font);
+    border-radius: 90px;
+    letter-spacing: 1.25px;
+    background-color: var(--first-color);
+    block-size: 50px;
+    display: block;
+    cursor: pointer;
+    user-select: none;
+    box-sizing: border-box;
+    font-size: 14px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 50px;
+    border: 2px solid black;
+    font-weight: bold;
+    padding: 0 1.5em;   
+    
+  }
+
+  .btn:hover{
+    background-color: var(--second-color);
+  }
+
+  /* Pie de pagina */
+
+  .pie-pagina{
+    display: flex;
+
+  }
+
+  .pie-pagina .foto img{
+    width: 250px;
+    border-radius:15px;
+    margin-left: 30%;
+  }
+
+  .pie-pagina .iconos{
+    margin-left: 50%;
+  }
+  .pie-pagina{
+    height: auto;
+    width: 100vw;
+    background-color: rgb(53, 61, 78);
+    position: absolute;
+    padding: 0;
+    margin-bottom: 0;
+    
+}
+.pie-pagina .group .box figure img {
+    width: 300px;
+    border-radius: 1.3rem;
+}
+.pie-pagina .group{
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 45px 0px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    align-content: center;
+    
+}
+
+
+.pie-pagina .group .box h3{
+    color: var(--second-color);
+    font-size: 1rem;
+    padding: 3%;
+}
+
+.pie-pagina .group .red-social a{
+    display: inline-block;
+    text-decoration: none;
+    width: 45px;
+    height: 45px;
+    line-height: 45px;
+    color: var(--second-color);
+    margin-right: 10px;
+    background-color: var(--first-color);
+    text-align: center;
+    border-radius: 4rem;
+    transition: all 300ms ease;
+    
+}
+.pie-pagina .group .red-social a:hover{
+    color: var(--third-color);
+}
+  
+/* MEDIA QUERYS */
+
+@media screen and (max-width: 1020px){
+    .nav-container{
+        grid-template-columns: 3fr 9fr;
+    }
+    .home{
+        display: flex;
+    }
+    .home .nombre{
+        font-size: 1.5rem;
+        margin-top:25% ;
+        margin-left:10% ;
+        
+    }
+    .home img{
+        height: 300px;
+        width: 300px;
+        border-radius: 40%;
+        margin-top: 20%;
+        margin-left: 10%;
+        border: 6px solid var(--first-color);
+    }
+    .about-me .card{
+        width: 350px;
+        height: 400px;
+        
+    }
+   
+    .habilidades .card{
+        width: 350px;
+        height: 400px;
+    }
+    .datos .card{
+        width: 400px;
+        height: 450px;
+        padding: 3%;
+        margin-left: 20%;
+        
+    }
+    .contact{
+        padding: 5%;
+    }
+    .pie-pagina .group{
+        grid-template-columns: repeat(1, 1fr);
+        margin-left: 30%;
+        
+    }
+    .pie-pagina .group .box figure img {
+        width: 300px;
+        border-radius: 1.3rem;
+        
+    }
+}
+
+@media screen and (max-width: 900px){
+    .nav-container{
+        grid-template-columns: 3fr 9fr;
+    }
+    .home{
+        display: flex;
+    }
+    .home .nombre{
+        font-size: 1rem;
+        margin-top:35% ;
+        margin-left:10% ;
+        
+    }
+    .home img{
+        height: 250px;
+        width: 250px;
+        border-radius: 40%;
+        margin-top: 25%;
+        margin-left: 10%;
+        border: 6px solid var(--first-color);
+    }
+    .about-me .card{
+        width: 300px;
+        height: 350px;
+    }
+    
+    .habilidades .card{
+        width: 300px;
+        height: 350px;
+    }
+    .datos{
+        width: 100%;
+        height: 550px;
+    }
+    .datos .card{
+        width: 400px;
+        height: 450px;
+        margin-left: 30%;
+        
+    }
+    .contact{
+        padding: 5%;
+    }
+    .pie-pagina .group{
+        grid-template-columns: repeat(1, 1fr);
+        margin-left: 30%;
+    }
+}
+
+@media screen and (max-width: 760px) {
+    .home{
+        display: flex;
+        background-position: center;
+    }
+    .home .nombre{
+        font-size: 0.9rem;
+        margin-top:70% ;
+        margin-left:8% ;
+        
+    }
+    .home img{
+        height: 250px;
+        width: 250px;
+        border-radius: 40%;
+        justify-self: center;
+        align-self: center;
+        border: 6px solid var(--first-color);
+    }
+    .nav-container > .navegacion> .menu> .menu-item>a{
+        margin-left: 0;
+        font-size: .9rem;
+        color:var(--second-color);
+    }
+    .nav-container{
+        grid-template-columns: 1fr 11fr;
+    }
+    .multiple{
+        
+        grid-template-columns: repeat(1, 1fr);
+        justify-items: center;
+        align-content: center;
+    }
+    .about-me .card{
+        width: 400px;
+        height: 450px;
+    }
+    .habilidades .card{
+        width: 400px;
+        height: 450px;
+    }
+    .datos{
+        height: 500px;
+        width: 100%;
+    }
+    .datos .card{
+        width: 400px;
+        height: 450px;
+        padding: 1%;
+        margin-left: 5%;
+    }
+    .contact{
+        padding: 5%;
+    }
+
+    .pie-pagina .group{
+        grid-template-columns: repeat(1, 1fr);
+        margin-left: 23%;
+        
+    }
+    
+    }
+    
+  
+    
+    
+
+
